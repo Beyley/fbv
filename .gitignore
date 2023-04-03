@@ -1,3 +1,6 @@
 *.o
 config.*
 fbv
+
+zig-cache/
+zig-out/

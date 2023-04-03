@@ -12,7 +12,7 @@
 #include <getopt.h>
 #include <termios.h>
 #include <signal.h>
-
+#include <math.h>
 
 #define PAN_STEPPING 20
 
@@ -361,6 +361,12 @@ identified:
 			if(transform_rotation)
 				do_rotate(&i, transform_rotation);
 
+			if(isnan(zoom))
+				zoom = 1;
+
+			if(isinf(zoom))
+				zoom = 1;
+
 			if(zoom > 1)
 				do_fit_to_screen(&i, x_size / zoom, y_size / zoom, 0, 0, 0, 0);
 			if(zoom < 1)
@@ -539,7 +545,8 @@ identified:
 					transform_shrink = 0;
 					transform_widthonly = 0;
 					transform_heightonly = 0;
-					zoom = c == '0' ? 1 : c == '+' ? zoom / 1.5 : zoom * 1.5;
+					zoom = 1;
+					// zoom = c == '0' ? 1 : c == '+' ? zoom / 1.5 : zoom * 1.5;
 					retransform = 1;
 					break;
 				case 'p':

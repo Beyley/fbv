@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 /* Public Use Functions:
  *
  * extern int fb_display(unsigned char *rgbbuff,
@@ -321,9 +322,9 @@ void* convertRGB2FB(int fh, unsigned char *rgbbuff, unsigned long count, int bpp
 {
 	unsigned long i;
 	void *fbbuff = NULL;
-	u_int8_t  *c_fbbuff;
-	u_int16_t *s_fbbuff;
-	u_int32_t *i_fbbuff;
+	uint8_t  *c_fbbuff;
+	uint16_t *s_fbbuff;
+	uint32_t *i_fbbuff;
 
 	switch(bpp)
 	{
