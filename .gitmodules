@@ -3,4 +3,4 @@
 	url = https://github.com/randy408/libspng/
 [submodule "miniz"]
 	path = miniz
-	url = https://github.com/richgel999/miniz
+	url = https://github.com/Beyley/miniz
