@@ -2,5 +2,5 @@
 config.*
 fbv
 
-zig-cache/
+.zig-cache/
 zig-out/
